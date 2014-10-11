@@ -1,4 +1,4 @@
-package br.com.almana;
+package br.com.almana.domain;
 
 public class App
 {
