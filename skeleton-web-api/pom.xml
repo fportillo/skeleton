@@ -9,14 +9,45 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>skeleton.web</groupId>
+    <groupId>br.com.almana</groupId>
     <artifactId>skeleton-web-api</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.3.v20140905</version>
+                <configuration>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <!--<webAppSourceDirectory>${project.basedir}/skeleton-web-api/src/main/webapp</webAppSourceDirectory>-->
+                    <!--<webApp>-->
+                        <!--<descriptor>${project.basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>-->
+                    <!--</webApp>-->
+                    <webAppConfig>
+                        <contextPath>/skeleton-web-api</contextPath>
+                        <extraClasspath>target/classes;../skeleton-domain/target/classes</extraClasspath>
+                    </webAppConfig>
+                    <!--<classesDirectory>${project.basedir}/skeleton-web-api/target/classes</classesDirectory>-->
+                    <scanTargets>
+                        <scanTarget>../skeleton-domain/target/classes</scanTarget>
+                        <!--<scanTarget>skeleton-web-api/target/classes</scanTarget>-->
+                    </scanTargets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>br.com.almana</groupId>
+            <artifactId>skeleton-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

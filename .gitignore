@@ -3,3 +3,4 @@ target/**
 .idea/**
 skeleton-domain/target/**
 skeleton-web-api/target/**
+logs/**
