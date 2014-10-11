@@ -1,7 +1,5 @@
 package br.com.almana.webapi.servlets;
 
-import br.com.almana.domain.App;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +12,6 @@ public class ServletExample extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("hello world from " + App.getName());
+        resp.getWriter().write("hello world");
     }
 }
