@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "servletExample", urlPatterns = "/api/servletexample")
+@WebServlet(name = "servletExample", urlPatterns = "/servlet/hello")
 public class ServletExample extends HttpServlet {
 
     @Override
