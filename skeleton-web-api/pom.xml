@@ -22,7 +22,7 @@
                     <scanIntervalSeconds>2</scanIntervalSeconds>
                     <!--<webAppSourceDirectory>${project.basedir}/skeleton-web-api/src/main/webapp</webAppSourceDirectory>-->
                     <!--<webApp>-->
-                        <!--<descriptor>${project.basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>-->
+                    <!--<descriptor>${project.basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>-->
                     <!--</webApp>-->
                     <webAppConfig>
                         <contextPath>/skeleton-web-api</contextPath>
@@ -45,14 +45,14 @@
             <version>3.1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-servlet</artifactId>
-            <version>1.18.1</version>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>2.13</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-json</artifactId>
-            <version>1.18.1</version>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.13</version>
         </dependency>
         <dependency>
             <groupId>br.com.almana</groupId>
