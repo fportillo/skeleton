@@ -2,10 +2,7 @@ package br.com.almana.webapi.resources;
 
 import br.com.almana.domain.Person;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -20,8 +17,18 @@ public class HelloWorldResource {
         List<Person> people = new ArrayList<>();
         people.add(new Person(name, 35));
         people.add(new Person("father of " + name, 35 + 30));
-        people.add(new Person("mother of name" + name, 35 + 30));
-        people.stream().forEach((p) -> System.out.println(p.getName()));
+        people.add(new Person("mother of " + name, 35 + 30));
+        people.stream().forEach((p) -> p.getName());//just making sure lambdas are working
         return Response.ok(people).build();
+    }
+
+    @Path("/{id}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response sayPersonalHello(@PathParam("id") Long id) {
+        if (id == 1) {
+            return Response.ok(new Person("chico", 35)).build();
+        }
+        return Response.status(Response.Status.NOT_FOUND).build();
     }
 }
